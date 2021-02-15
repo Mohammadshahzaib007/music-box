@@ -9,14 +9,10 @@
 
       <div
         style="position: absolute;
-    width: 100%;
-    height: 100%;
-    background: yellow;
-    clip-path: polygon(65% 0, 100% 0, 100% 100%, 15% 100%);
-    z-index: 1;
-    background: rgb(58, 58, 61, .45);;
-    backdrop-filter: blur(10px);
-    top: 0; right: -2px"
+               width: 100%; height: 100%;
+               background: yellow; clip-path: polygon(65% 0, 100% 0, 100% 100%, 15% 100%);
+               z-index: 1; background: rgb(58, 58, 61, .45);;
+               backdrop-filter: blur(10px); top: 0; right: -2px"
       />
       <v-sheet
         width="50%"
@@ -84,17 +80,18 @@ export default class FlowCard extends Vue {
 .card-bg {
     width: 100%;
     background-image: url(../../assets/images/flowImg1.png);
-&::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: transparent;
 
-    backdrop-filter: blur(8px);
-}
+    // for background blur
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: transparent;
+        backdrop-filter: blur(5px);
+    }
 }
 
 .half-bg {

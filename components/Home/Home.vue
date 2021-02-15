@@ -14,7 +14,19 @@
           </h1>
         </v-col>
         <v-col
-          cols="12"
+          cols="3"
+          class="px-0 py-0"
+        >
+          <FlowCard />
+        </v-col>
+        <v-col
+          cols="3"
+          class="px-0 py-0"
+        >
+          <FlowCard />
+        </v-col>
+        <v-col
+          cols="3"
           class="px-0 py-0"
         >
           <FlowCard />
