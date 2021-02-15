@@ -3,6 +3,7 @@ import colors from 'vuetify/es5/util/colors';
 import Logo from '@/components/icons/Logo.vue';
 import Profile from '@/components/icons/Profile.vue';
 import Search from '@/components/icons/Search.vue';
+import Play from '@/components/icons/Play.vue';
 
 export default {
   theme: {
@@ -28,6 +29,9 @@ export default {
       },
       search: {
         component: Search
+      },
+      play: {
+        component: Play
       }
     }
   }
