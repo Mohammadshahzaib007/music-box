@@ -1,5 +1,6 @@
 <template>
-  <v-app>
+  <v-app style="background: #161A1A">
+    <Navigation />
     <v-main>
       <v-container>
         <nuxt />
@@ -35,3 +36,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+html {
+  background: #161A1A;
+}
+// Global styles
+@import "@/assets/main.scss";
+</style>

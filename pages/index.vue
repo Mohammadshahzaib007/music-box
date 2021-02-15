@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello World</h1>
+  <Home />
 </template>
 
 <script>
@@ -10,4 +10,6 @@ import { Component, Vue } from 'nuxt-property-decorator';
 export default class Index extends Vue {
 
 };
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Lato', sans-serif;
 </script>

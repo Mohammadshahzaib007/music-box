@@ -1,5 +1,9 @@
 import colors from 'vuetify/es5/util/colors';
 
+import Logo from '@/components/icons/Logo.vue';
+import Profile from '@/components/icons/Profile.vue';
+import Search from '@/components/icons/Search.vue';
+
 export default {
   theme: {
     light: true,
@@ -13,6 +17,18 @@ export default {
         success: colors.green.accent3
       }
     }
+  },
+  icons: {
+    values: {
+      logo: {
+        component: Logo
+      },
+      profile: {
+        component: Profile
+      },
+      search: {
+        component: Search
+      }
+    }
   }
-}
-;
+};
