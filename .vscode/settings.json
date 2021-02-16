@@ -21,4 +21,12 @@
       "comments": false,
       "strings": false
     },
+    "spellright.language": [
+      "en"
+    ],
+    "spellright.documentTypes": [
+      "markdown",
+      "latex",
+      "plaintext"
+    ],
   }

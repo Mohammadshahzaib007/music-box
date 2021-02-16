@@ -36,7 +36,7 @@
           class="px-0 py-0"
         >
           <h1
-            class="mb-7"
+            class="mb-4"
             style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
           >
             Recently played
@@ -46,7 +46,14 @@
           cols="12"
           class="px-0 py-0 d-flex justify-space-between"
         >
-          <RecentCard />
+          <RecentCard
+            v-for="(item,i) in recentlyPlayedData"
+            :key="i"
+            :is-rounded="item.isRounded"
+            :img-src="item.imgSrc"
+            :title="item.title"
+            :rating="item.rating"
+          />
         </v-col>
       </v-row>
     </v-container>
@@ -58,6 +65,7 @@ import { Component, Vue } from 'nuxt-property-decorator';
 
 @Component
 export default class Home extends Vue {
+  // for rendering HTML hello
   flowSectionData: Array<{
     bgImage:string,
     coverImgSrc: string,
@@ -91,5 +99,49 @@ export default class Home extends Vue {
       headingColor: '#6BEEAE'
     }
   ]
+
+   recentlyPlayedData: Array<{
+     isRounded: boolean,
+     imgSrc: string,
+     title: string,
+     rating: string | number
+   }> = [
+     {
+       isRounded: true,
+       imgSrc: require('@/assets/images/queen.png'),
+       title: 'Queen',
+       rating: '948,117'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/playListRadio.png'),
+       title: '70s Rock Anthems Radio  ',
+       rating: 'Progressive Rock'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/progRock.png'),
+       title: 'Progressive Rock',
+       rating: '128,045'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/starTalk.png'),
+       title: 'StarTalk Radio',
+       rating: '87,444'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/70sRock.png'),
+       title: '70s Rock Anthems',
+       rating: '387,722'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/theNextDay.png'),
+       title: 'The Next Day',
+       rating: 'Album by David Bowie'
+     }
+   ]
 };
 </script>

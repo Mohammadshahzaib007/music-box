@@ -4,26 +4,27 @@
     height="17.1875rem"
     color="transparent"
     elevation="0"
-    class="d-flex align-center justify-center flex-column"
+    :class="['d-flex' ,'flex-column', isRounded && 'align-center']"
   >
     <v-sheet
-      class="rounded-circle"
+      :class="[isRounded && 'rounded-circle']"
       width="14.0625rem"
       height="14.0625rem"
-      style="overflow: hidden"
+      style="overflow: hidden; border-radius: 8px"
+      elevation="0"
     >
       <v-img
         width="100%"
         height="100%"
-
-        :src="require('@/assets/images/queen.png')"
+        :src="imgSrc"
+        style="background-size: cover"
       />
     </v-sheet>
     <p
-      class="mt-1 mb-1"
+      class="mt-1 mb-1 text-capitalize"
       style="font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; color: #fff;"
     >
-      Queen
+      {{ title }}
     </p>
     <p
       class="mb-0"
@@ -34,7 +35,7 @@
         size="14"
       >
         $heart
-      </v-icon> 287
+      </v-icon> {{ rating }}
     </p>
   </v-card>
 </template>
