@@ -4,6 +4,7 @@ import Logo from '@/components/icons/Logo.vue';
 import Profile from '@/components/icons/Profile.vue';
 import Search from '@/components/icons/Search.vue';
 import Play from '@/components/icons/Play.vue';
+import Plus from '@/components/icons/Plus.vue';
 
 export default {
   theme: {
@@ -32,6 +33,9 @@ export default {
       },
       play: {
         component: Play
+      },
+      plus: {
+        component: Plus
       }
     }
   }

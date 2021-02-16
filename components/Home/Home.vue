@@ -14,22 +14,32 @@
           </h1>
         </v-col>
         <v-col
-          cols="3"
-          class="px-0 py-0"
+          cols="12"
+          class="px-0 py-0 d-flex justify-space-between"
         >
-          <FlowCard />
-        </v-col>
-        <v-col
-          cols="3"
-          class="px-0 py-0"
-        >
-          <FlowCard />
-        </v-col>
-        <v-col
-          cols="3"
-          class="px-0 py-0"
-        >
-          <FlowCard />
+          <FlowCard
+            :bg-image-src="require('@/assets/images/flowImg1.png')"
+            :cover-img-src="require('@/assets/images/FlowCover@3x.png')"
+            sub-heading="Your Personal Soundtrack"
+            bottom-text="Based on your listening history"
+            icon="$play"
+          />
+
+          <FlowCard
+            :bg-image-src="require('@/assets/images/flowBg2@3x.png')"
+            :cover-img-src="require('@/assets/images/flowCover2@3x.png')"
+            sub-heading="Create your own perfect soundtrack"
+            bottom-text="Select multiple genres and moods to create the perfect soundtrack"
+            icon="$plus"
+          />
+
+          <FlowCard
+            :bg-image-src="require('@/assets/images/flowBg3@3x.png')"
+            :cover-img-src="require('@/assets/images/flowCover3@3x.png')"
+            sub-heading="Create your own concert with your favorite singers"
+            bottom-text="Select multiple artists to create the perfect soundtrack"
+            icon="$plus"
+          />
         </v-col>
       </v-row>
     </v-container>

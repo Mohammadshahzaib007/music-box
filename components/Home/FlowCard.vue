@@ -4,7 +4,10 @@
     height="18.75rem"
     class="d-flex"
   >
-    <div class="card-bg d-flex">
+    <div
+      class="card-bg d-flex"
+      :style="{ backgroundImage: `url(${bgImageSrc})` }"
+    >
       <!-- <div class="half-bg d-flex"> -->
 
       <div
@@ -25,18 +28,18 @@
             width="100%"
             height="100%"
             contain
-            :src="require('@/assets/images/FlowCover@3x.png')"
+            :src="coverImgSrc"
           />
         </div>
         <div
-          style="width: 3.75rem; height: 3.75rem; background-color: rgba(0, 0, 0, .5); border-radius: 50%; margin-top: -33px; z-index: 1;"
+          style="width: 3.75rem; height: 3.75rem; background-color: rgba(0, 0, 0, .5); cursor: pointer; border-radius: 50%; margin-top: -33px; z-index: 1;"
           class="d-flex align-center justify-center"
         >
           <v-icon
             size="20"
             color="white"
           >
-            $play
+            {{ icon }}
           </v-icon>
         </div>
       </v-sheet>
@@ -50,16 +53,17 @@
           Flow
         </h1>
         <p
-          style="font-weight: normal; font-size: 0.875rem; letter-spacing: 0.01em; line-height: 52px; color: #fff; margin-top: -20px"
+          class="px-0 py-0"
+          style="max-width: 9.9375rem; text-align: center; font-weight: normal; font-size: 0.875rem; letter-spacing: line-height: 22px; color: #fff; margin-top: -5px"
         >
-          Your Personal Soundtrack
+          {{ subHeading }}
         </p>
 
         <p
-          class="mt-auto mb-4"
-          style="font-weight: normal; font-size: 0.75rem; letter-spacing: 0.01em; color: #d5d5d5; opacity: 0.8;"
+          class="mt-auto mb-4 text-center"
+          style="max-width: 11.5rem; font-weight: normal; font-size: 0.75rem; letter-spacing: 0.01em; color: #d5d5d5; opacity: 0.8;"
         >
-          Based on your listening history
+          {{ bottomText }}
         </p>
       </v-sheet>
       <!-- </div> -->
@@ -68,36 +72,48 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Prop, Vue } from 'nuxt-property-decorator';
 
 @Component
 export default class FlowCard extends Vue {
+  @Prop()
+  bgImageSrc!: string
 
-};
+  @Prop()
+  coverImgSrc!: string
+
+  @Prop()
+  subHeading!: string
+
+  @Prop()
+  bottomText!: string
+
+  @Prop()
+  icon!:string
+}
 </script>
 
 <style lang="scss" scoped>
 .card-bg {
-    width: 100%;
-    background-image: url(../../assets/images/flowImg1.png);
+  width: 100%;
+  background-image: var(--bg-image);
 
-    // for background blur
-    &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: transparent;
-        backdrop-filter: blur(5px);
-    }
+  // for background blur
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    backdrop-filter: blur(5px);
+  }
 }
 
 .half-bg {
-    width: 100%;
-    background-color: grey;
-    clip-path: polygon(65% 0, 100% 0, 100% 100%, 0% 100%);
-
+  width: 100%;
+  background-color: grey;
+  clip-path: polygon(65% 0, 100% 0, 100% 100%, 0% 100%);
 }
 </style>
