@@ -46,19 +46,15 @@ import { Component, Prop, Vue } from 'nuxt-property-decorator';
 @Component
 export default class RecentCard extends Vue {
     @Prop()
-    imgSrc:string
+    imgSrc!:string
 
     @Prop()
-    title:string
+    title!:string
 
     @Prop()
-    rating: string | number
+    rating!: string | number
 
     @Prop()
-    isRounded: boolean
+    isRounded!: boolean
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

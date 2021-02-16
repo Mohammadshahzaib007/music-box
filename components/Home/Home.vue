@@ -56,6 +56,34 @@
           />
         </v-col>
       </v-row>
+
+      <v-row style="margin-top: 5.625rem">
+        <v-col
+          cols="12"
+          class="px-0 py-0"
+        >
+          <h1
+            style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
+          >
+            Browse
+          </h1>
+          <p
+            style="font-weight: normal; font-size: 0.875rem; letter-spacing: 0.01em;  color: #99999f; margin-top: -15px"
+          >
+            Explore by genre and mood
+          </p>
+        </v-col>
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex justify-space-between"
+        >
+          <CategoryCard
+            v-for="(item, i) in categoryData"
+            :key="i"
+            :title="item.title"
+          />
+        </v-col>
+      </v-row>
     </v-container>
   </section>
 </template>
@@ -143,5 +171,17 @@ export default class Home extends Vue {
        rating: 'Album by David Bowie'
      }
    ]
+
+  categoryData: Array<{
+    title: string,
+    imgLink: string
+  }> = [
+    { title: 'hip-hop', imgLink: '' },
+    { title: 'pop', imgLink: '' },
+    { title: 'rock', imgLink: '' },
+    { title: 'country', imgLink: '' },
+    { title: 'dance/Electro', imgLink: '' },
+    { title: 'indie', imgLink: '' }
+  ]
 };
 </script>
