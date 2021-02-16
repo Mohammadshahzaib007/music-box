@@ -6,6 +6,9 @@ import Search from '@/components/icons/Search.vue';
 import Play from '@/components/icons/Play.vue';
 import Plus from '@/components/icons/Plus.vue';
 import Heart from '@/components/icons/Heart.vue';
+import More from '@/components/icons/More.vue';
+import RightArrow from '@/components/icons/RightArrow.vue';
+import LeftArrow from '@/components/icons/LeftArrow.vue';
 
 export default {
   theme: {
@@ -40,6 +43,15 @@ export default {
       },
       heart: {
         component: Heart
+      },
+      more: {
+        component: More
+      },
+      rightArrow: {
+        component: RightArrow
+      },
+      leftArrow: {
+        component: LeftArrow
       }
     }
   }

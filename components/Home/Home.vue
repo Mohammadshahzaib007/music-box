@@ -4,7 +4,7 @@
       <v-row>
         <v-col
           cols="12"
-          class="px-0 py-0"
+          class="px-0 py-0 d-flex align-center justify-space-between"
         >
           <h1
             class="mb-1"
@@ -12,6 +12,12 @@
           >
             Flow
           </h1>
+          <v-icon
+            color="white"
+            size="24"
+          >
+            $more
+          </v-icon>
         </v-col>
         <v-col
           cols="12"
@@ -33,7 +39,7 @@
       <v-row style="margin-top: 5.625rem">
         <v-col
           cols="12"
-          class="px-0 py-0"
+          class="px-0 py-0 d-flex align-center justify-space-between"
         >
           <h1
             class="mb-4"
@@ -41,6 +47,14 @@
           >
             Recently played
           </h1>
+          <div>
+            <v-icon color="white">
+              $leftArrow
+            </v-icon>
+            <v-icon color="white">
+              $rightArrow
+            </v-icon>
+          </div>
         </v-col>
         <v-col
           cols="12"
@@ -60,17 +74,25 @@
       <v-row style="margin-top: 5.625rem">
         <v-col
           cols="12"
-          class="px-0 py-0"
+          class="px-0 py-0 d-flex align-center justify-space-between"
         >
-          <h1
-            style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
-          >
-            Browse
-          </h1>
+          <div>
+            <h1
+              style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
+            >
+              Browse
+            </h1>
+            <p
+              style="font-weight: normal; font-size: 0.875rem; letter-spacing: 0.01em;  color: #99999f; margin-top: -15px"
+            >
+              Explore by genre and mood
+            </p>
+          </div>
           <p
-            style="font-weight: normal; font-size: 0.875rem; letter-spacing: 0.01em;  color: #99999f; margin-top: -15px"
+            class="text-uppercase mb-0"
+            style=" font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; line-height: 61px; color: #d5d5d5;"
           >
-            Explore by genre and mood
+            view all
           </p>
         </v-col>
         <v-col
@@ -88,7 +110,7 @@
       <v-row style="margin-top: 5.625rem">
         <v-col
           cols="12"
-          class="px-0 py-0"
+          class="px-0 py-0 d-flex align-center justify-space-between"
         >
           <h1
             class="mb-4"
@@ -96,6 +118,12 @@
           >
             Make monday more productive
           </h1>
+          <p
+            class="text-uppercase mb-0"
+            style=" font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; line-height: 61px; color: #d5d5d5;"
+          >
+            view all
+          </p>
         </v-col>
         <v-col
           cols="12"

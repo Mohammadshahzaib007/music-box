@@ -1,0 +1,32 @@
+
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="10.121"
+    height="17.414"
+    viewBox="0 0 10.121 17.414"
+  >
+    <path
+      id="Path_434"
+      data-name="Path 434"
+      d="M6379-271.7l8,8,8-8"
+      transform="translate(272.41 6395.707) rotate(-90)"
+      fill="none"
+      stroke="#fff"
+      stroke-width="2"
+    />
+  </svg>
+
+  </svg>
+</template>
+
+<script lang="ts">
+import { Vue, Component } from 'nuxt-property-decorator';
+@Component
+export default class RightArrow extends Vue {}
+</script>
+<style lang="scss" scoped>
+path{
+  fill: currentColor;
+}
+</style>
