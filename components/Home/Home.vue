@@ -23,6 +23,7 @@
             sub-heading="Your Personal Soundtrack"
             bottom-text="Based on your listening history"
             icon="$play"
+            heading-color="#fff"
           />
 
           <FlowCard
@@ -31,6 +32,7 @@
             sub-heading="Create your own perfect soundtrack"
             bottom-text="Select multiple genres and moods to create the perfect soundtrack"
             icon="$plus"
+            heading-color="#7190F2"
           />
 
           <FlowCard
@@ -39,6 +41,7 @@
             sub-heading="Create your own concert with your favorite singers"
             bottom-text="Select multiple artists to create the perfect soundtrack"
             icon="$plus"
+            heading-color="#6BEEAE"
           />
         </v-col>
       </v-row>

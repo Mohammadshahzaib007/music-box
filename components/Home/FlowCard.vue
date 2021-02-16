@@ -49,7 +49,7 @@
         style="z-index: 2"
         class="d-flex align-center justify-center flex-column"
       >
-        <h1 style="font-size: 2rem; line-height: 52px; font-weight: 900; opacity: .45; color: #fff; letter-spacing: -0.03em; margin-top: 6.25rem">
+        <h1 :style="{fontSize: '2rem', lineHeight: '52px', fontWeight: '900', opacity: '.45', color: headingColor, letterSpacing: '-0.03em', marginTop: '6.25rem'}">
           Flow
         </h1>
         <p
@@ -90,6 +90,9 @@ export default class FlowCard extends Vue {
 
   @Prop()
   icon!:string
+
+  @Prop()
+  headingColor!: string
 }
 </script>
 
