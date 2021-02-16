@@ -84,6 +84,33 @@
           />
         </v-col>
       </v-row>
+
+      <v-row style="margin-top: 5.625rem">
+        <v-col
+          cols="12"
+          class="px-0 py-0"
+        >
+          <h1
+            class="mb-4"
+            style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
+          >
+            Make monday more productive
+          </h1>
+        </v-col>
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex justify-space-between"
+        >
+          <RecentCard
+            v-for="(item,i) in makeMondayData"
+            :key="i"
+            :is-rounded="item.isRounded"
+            :img-src="item.imgSrc"
+            :title="item.title"
+            :rating="item.rating"
+          />
+        </v-col>
+      </v-row>
     </v-container>
   </section>
 </template>
@@ -183,5 +210,49 @@ export default class Home extends Vue {
     { title: 'dance/Electro', imgLink: '' },
     { title: 'indie', imgLink: '' }
   ]
+
+   makeMondayData: Array<{
+     isRounded: boolean,
+     imgSrc: string,
+     title: string,
+     rating: string | number
+   }> = [
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/deepFocus.png'),
+       title: 'Deep Focus',
+       rating: '678,612'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/productiveMorning.png'),
+       title: 'Productive Morning',
+       rating: '244,412'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/whiteNoise.png'),
+       title: 'White Noise',
+       rating: '146,264'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/nature.png'),
+       title: 'Nature Song',
+       rating: '89,460'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/brainFood.png'),
+       title: 'Brain Food',
+       rating: '727,743'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/morningRush.png'),
+       title: 'Morning Rush',
+       rating: '291,818'
+     }
+   ]
 };
 </script>
