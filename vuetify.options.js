@@ -5,6 +5,7 @@ import Profile from '@/components/icons/Profile.vue';
 import Search from '@/components/icons/Search.vue';
 import Play from '@/components/icons/Play.vue';
 import Plus from '@/components/icons/Plus.vue';
+import Heart from '@/components/icons/Heart.vue';
 
 export default {
   theme: {
@@ -36,6 +37,9 @@ export default {
       },
       plus: {
         component: Plus
+      },
+      heart: {
+        component: Heart
       }
     }
   }
