@@ -10,7 +10,7 @@
     <v-container style="max-width: 115rem">
       <v-row>
         <v-col
-          cols="6"
+          cols="4"
           class="d-flex align-center px-0 py-0"
         >
           <v-toolbar-title>
@@ -24,8 +24,8 @@
           </v-toolbar-title>
 
           <nuxt-link
-            v-for="navLink in navLinks"
-            :key="navLink"
+            v-for="(navLink, i) in navLinks"
+            :key="i"
             text
             :to="navLink.link"
             class=""
@@ -34,8 +34,32 @@
             {{ navLink.name }}
           </nuxt-link>
         </v-col>
+
         <v-col
-          cols="6"
+
+          cols="4"
+          class="px-0 py-0"
+        >
+          <div
+            v-if="currentPage ==='/gener&mood'"
+            style="width: 100%; height: 100%"
+            class="d-flex align-center justify-center"
+          >
+            <nuxt-link
+              v-for="(navLink, i) in categoryLinks"
+              :key="i"
+              text
+              :to="navLink.link"
+              class=""
+              style="font-size: 1.25rem; color: #99999F; line-height: 52px; font-weight: 700; margin-right: 1.875rem; text-decoration: none"
+            >
+              {{ navLink.name }}
+            </nuxt-link>
+          </div>
+        </v-col>
+
+        <v-col
+          cols="4"
           class="d-flex justify-end align-center px-0 py-0"
         >
           <div
@@ -77,7 +101,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue, Watch } from 'nuxt-property-decorator';
 
 @Component
 export default class Index extends Vue {
@@ -86,6 +110,19 @@ export default class Index extends Vue {
     { name: 'Library', link: '#' },
     { name: 'Home', link: '/' }
   ]
+
+  categoryLinks: Array<{name: string, link: string}> = [
+    { name: 'Genres & Moods', link: '#' },
+    { name: 'New Releases', link: '#' },
+    { name: 'Podcasts', link: '#' }
+  ]
+
+  currentPage: string | null = null;
+
+  @Watch('$route.path')
+  handler (v: string) {
+    this.currentPage = v;
+  }
 };
 </script>
 
