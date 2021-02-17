@@ -97,7 +97,7 @@
             </p>
           </div>
           <nuxt-link
-            to="#"
+            to="/gener&mood"
             class="text-uppercase mb-0 text-decoration-none"
             style=" font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; line-height: 61px; color: #d5d5d5;"
           >
@@ -301,7 +301,7 @@
       </v-row>
 
       <v-row
-        style="width: 115rem; position: fixed; bottom: 0; left: 50%; transform: translate(-50%, -50%)"
+        style="width: 115rem; position: fixed; bottom: -18px; left: 50%; transform: translate(-50%, -50%)"
       >
         <v-col class="px-0 py-0">
           <AudioPlayer />
