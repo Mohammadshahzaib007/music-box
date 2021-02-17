@@ -5,13 +5,13 @@
     elevation="0"
     app
     absolute
-    class="mt-5"
+    class="mt-5 px-0 py-0"
   >
-    <v-container style="max-width: 1760px">
+    <v-container style="max-width: 115rem">
       <v-row>
         <v-col
           cols="6"
-          class="d-flex align-center"
+          class="d-flex align-center px-0 py-0"
         >
           <v-toolbar-title>
             <v-icon
@@ -36,7 +36,7 @@
         </v-col>
         <v-col
           cols="6"
-          class="d-flex justify-end align-center"
+          class="d-flex justify-end align-center px-0 py-0"
         >
           <div
             style="width: 12.5rem"
