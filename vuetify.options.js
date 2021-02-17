@@ -9,6 +9,15 @@ import Heart from '@/components/icons/Heart.vue';
 import More from '@/components/icons/More.vue';
 import RightArrow from '@/components/icons/RightArrow.vue';
 import LeftArrow from '@/components/icons/LeftArrow.vue';
+import AddToFavourit from '@/components/icons/AddToFavourit.vue';
+import RightTick from '@/components/icons/RightTick.vue';
+import Queue from '@/components/icons/Queue.vue';
+import Volume from '@/components/icons/Volume.vue';
+import Shuffle from '@/components/icons/Shuffle.vue';
+import Pause from '@/components/icons/Pause.vue';
+import Prev from '@/components/icons/Prev.vue';
+import Next from '@/components/icons/Next.vue';
+import Repeat from '@/components/icons/Repeat.vue';
 
 export default {
   theme: {
@@ -52,6 +61,33 @@ export default {
       },
       leftArrow: {
         component: LeftArrow
+      },
+      addToFavourit: {
+        component: AddToFavourit
+      },
+      rightTick: {
+        component: RightTick
+      },
+      queue: {
+        component: Queue
+      },
+      volume: {
+        component: Volume
+      },
+      shuffle: {
+        component: Shuffle
+      },
+      pause: {
+        component: Pause
+      },
+      prev: {
+        component: Prev
+      },
+      next: {
+        component: Next
+      },
+      repeat: {
+        component: Repeat
       }
     }
   }

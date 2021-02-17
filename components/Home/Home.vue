@@ -265,7 +265,7 @@
         </v-col>
       </v-row>
 
-      <v-row style="margin-top: 5.625rem">
+      <v-row style="margin-top: 5.625rem; margin-bottom: 9.375rem">
         <v-col
           cols="12"
           class="px-0 py-0 d-flex align-center justify-space-between"
@@ -297,6 +297,12 @@
             :title="item.title"
             :rating="item.rating"
           />
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col class="px-0 py-0">
+          <AudioPlayer />
         </v-col>
       </v-row>
     </v-container>
