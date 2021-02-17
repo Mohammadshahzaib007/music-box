@@ -103,6 +103,7 @@
             v-for="(item, i) in categoryData"
             :key="i"
             :title="item.title"
+            :bg-color="item.bgColor"
           />
         </v-col>
       </v-row>
@@ -136,6 +137,44 @@
             :img-src="item.imgSrc"
             :title="item.title"
             :rating="item.rating"
+          />
+        </v-col>
+      </v-row>
+
+      <v-row style="margin-top: 5.625rem">
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex align-center justify-space-between"
+        >
+          <div>
+            <h1
+              style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
+            >
+              Podcasts
+            </h1>
+            <p
+              style="font-weight: normal; font-size: 0.875rem; letter-spacing: 0.01em;  color: #99999f; margin-top: -15px"
+            >
+              Explore by categories and popularity
+            </p>
+          </div>
+          <p
+            class="text-uppercase mb-0"
+            style=" font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; line-height: 61px; color: #d5d5d5;"
+          >
+            view all
+          </p>
+        </v-col>
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex justify-space-between"
+        >
+          <CategoryCard
+            v-for="(item, i) in podcastsCategoryData"
+            :key="i"
+            :title="item.title"
+            :center-text="item.centerText"
+            :bg-color="item.bgColor"
           />
         </v-col>
       </v-row>
@@ -230,13 +269,15 @@ export default class Home extends Vue {
   categoryData: Array<{
     title: string,
     imgLink: string
+    centerText: boolean
+    bgColor: string
   }> = [
-    { title: 'hip-hop', imgLink: '' },
-    { title: 'pop', imgLink: '' },
-    { title: 'rock', imgLink: '' },
-    { title: 'country', imgLink: '' },
-    { title: 'dance/Electro', imgLink: '' },
-    { title: 'indie', imgLink: '' }
+    { centerText: false, title: 'hip-hop', imgLink: '', bgColor: 'rgba(197, 92, 249, 0.20)' },
+    { centerText: false, title: 'pop', imgLink: '', bgColor: 'rgba(197, 92, 249, 0.20)' },
+    { centerText: false, title: 'rock', imgLink: '', bgColor: 'rgba(197, 92, 249, 0.20)' },
+    { centerText: false, title: 'country', imgLink: '', bgColor: 'rgba(197, 92, 249, 0.20)' },
+    { centerText: false, title: 'dance/Electro', imgLink: '', bgColor: 'rgba(197, 92, 249, 0.20)' },
+    { centerText: false, title: 'indie', imgLink: '', bgColor: 'rgba(197, 92, 249, 0.20)' }
   ]
 
    makeMondayData: Array<{
@@ -282,5 +323,19 @@ export default class Home extends Vue {
        rating: '291,818'
      }
    ]
+
+   podcastsCategoryData: Array<{
+    title: string,
+    imgLink: string
+    centerText: boolean
+    bgColor: string
+  }> = [
+    { centerText: true, title: 'stories', imgLink: '', bgColor: 'linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%)' },
+    { centerText: true, title: 'educational', imgLink: '', bgColor: 'linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%)' },
+    { centerText: true, title: 'music', imgLink: '', bgColor: 'linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%)' },
+    { centerText: true, title: 'Lifestyle & Health', imgLink: '', bgColor: 'linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%)' },
+    { centerText: true, title: 'busniess & technology', imgLink: '', bgColor: 'linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%)' },
+    { centerText: true, title: 'games', imgLink: '', bgColor: 'linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%)' }
+  ]
 };
 </script>
