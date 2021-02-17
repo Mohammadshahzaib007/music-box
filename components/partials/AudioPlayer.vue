@@ -19,7 +19,7 @@
           >
         </v-avatar>
       </div>
-      <div class="ml-3">
+      <div class="ml-3 px-0 py-0">
         <p
           class="mb-0"
           style="font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; color: #fff;"
@@ -33,14 +33,28 @@
           David Bowie
         </p>
       </div>
-      <div class="ml-10">
-        <v-icon
+      <div class="ml-5">
+        <v-btn
+          elevation="0"
+          fab
+          small
+          color="transparent"
           class="mr-7"
-          color="white"
         >
-          $addToFavourit
-        </v-icon>
-        <v-icon>$rightTick</v-icon>
+          <v-icon
+            color="white"
+          >
+            $addToFavourit
+          </v-icon>
+        </v-btn>
+        <v-btn
+          elevation="0"
+          fab
+          small
+          color="transparent"
+        >
+          <v-icon>$rightTick</v-icon>
+        </v-btn>
       </div>
     </div>
 
@@ -50,14 +64,21 @@
         style="width: 18.375rem"
         class="d-flex align-center justify-space-between"
       >
-        <v-icon
+        <v-btn
           v-for="(icon,i) in musicControllerIcons"
           :key="i"
-          color="white"
-          size="18"
+          elevation="0"
+          fab
+          small
+          color="transparent"
         >
-          ${{ icon }}
-        </v-icon>
+          <v-icon
+            color="white"
+            size="18"
+          >
+            ${{ icon }}
+          </v-icon>
+        </v-btn>
       </div>
       <div class="d-flex align-center">
         <p
@@ -83,19 +104,34 @@
       class="d-flex"
       style="margin-right: 5rem"
     >
-      <v-icon
-        class="mr-10"
-        color="white"
+      <v-btn
+        elevation="0"
+        fab
+        small
+        color="transparent"
+        class="mr-7"
       >
-        $queue
-      </v-icon>
-      <div class="d-flex align-center">
         <v-icon
-          class="mr-2"
+
           color="white"
         >
-          $volume
+          $queue
         </v-icon>
+      </v-btn>
+      <div class="d-flex align-center">
+        <v-btn
+          elevation="0"
+          fab
+          small
+          color="transparent"
+        >
+          <v-icon
+            class="mr-2"
+            color="white"
+          >
+            $volume
+          </v-icon>
+        </v-btn>
         <div
 
           style="width: 80px; height: 3px; background: #99999F;"
