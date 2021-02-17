@@ -1,6 +1,6 @@
 <template>
   <section style="margin-top: 4.9375rem">
-    <v-container style="max-width: 92.5rem">
+    <v-container style="max-width: 92.5rem; position: relative">
       <v-row>
         <v-col
           cols="12"
@@ -300,7 +300,9 @@
         </v-col>
       </v-row>
 
-      <v-row>
+      <v-row
+        style="width: 115rem; position: fixed; bottom: 0; left: 50%; transform: translate(-50%, -50%)"
+      >
         <v-col class="px-0 py-0">
           <AudioPlayer />
         </v-col>
