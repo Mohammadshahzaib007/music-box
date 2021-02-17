@@ -2,7 +2,7 @@
   <v-card
     width="14.0625rem"
     height="8rem"
-    style="border-radius: 8px"
+    style="border-radius: 8px; overflow: hidden"
     color="transparent"
     elevation="0"
   >
@@ -34,6 +34,4 @@ centerText!: boolean
 @Prop()
 bgColor!: string
 }
-// background: rgb(168,116,208);
-// background: linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%);
 </script>

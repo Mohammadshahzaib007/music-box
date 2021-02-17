@@ -12,12 +12,20 @@
           >
             Flow
           </h1>
-          <v-icon
-            color="white"
-            size="24"
+          <v-btn
+
+            fab
+            dark
+            small
+            color="transparent"
           >
-            $more
-          </v-icon>
+            <v-icon
+              color="white"
+              size="24"
+            >
+              $more
+            </v-icon>
+          </v-btn>
         </v-col>
         <v-col
           cols="12"
@@ -48,7 +56,7 @@
             Recently played
           </h1>
           <div>
-            <v-icon color="white">
+            <v-icon color="#303033">
               $leftArrow
             </v-icon>
             <v-icon color="white">
@@ -88,12 +96,13 @@
               Explore by genre and mood
             </p>
           </div>
-          <p
-            class="text-uppercase mb-0"
+          <nuxt-link
+            to="#"
+            class="text-uppercase mb-0 text-decoration-none"
             style=" font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; line-height: 61px; color: #d5d5d5;"
           >
             view all
-          </p>
+          </nuxt-link>
         </v-col>
         <v-col
           cols="12"
@@ -119,12 +128,13 @@
           >
             Make monday more productive
           </h1>
-          <p
-            class="text-uppercase mb-0"
+          <nuxt-link
+            to="#"
+            class="text-uppercase mb-0 text-decoration-none"
             style=" font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; line-height: 61px; color: #d5d5d5;"
           >
             view all
-          </p>
+          </nuxt-link>
         </v-col>
         <v-col
           cols="12"
@@ -158,12 +168,13 @@
               Explore by categories and popularity
             </p>
           </div>
-          <p
-            class="text-uppercase mb-0"
+          <nuxt-link
+            to="#"
+            class="text-uppercase mb-0 text-decoration-none"
             style=" font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; line-height: 61px; color: #d5d5d5;"
           >
             view all
-          </p>
+          </nuxt-link>
         </v-col>
         <v-col
           cols="12"
@@ -175,6 +186,116 @@
             :title="item.title"
             :center-text="item.centerText"
             :bg-color="item.bgColor"
+          />
+        </v-col>
+      </v-row>
+
+      <v-row style="margin-top: 5.625rem">
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex align-center justify-space-between"
+        >
+          <div>
+            <h1
+              style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
+            >
+              Playlist picks
+            </h1>
+            <p
+              style="font-weight: normal; font-size: 0.875rem; letter-spacing: 0.01em;  color: #99999f; margin-top: -15px"
+            >
+              Selected for you based on your recent activity
+            </p>
+          </div>
+          <div>
+            <v-icon color="#303033">
+              $leftArrow
+            </v-icon>
+            <v-icon color="white">
+              $rightArrow
+            </v-icon>
+          </div>
+        </v-col>
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex justify-space-between"
+        >
+          <RecentCard
+            v-for="(item,i) in playListsPickData"
+            :key="i"
+            :is-rounded="item.isRounded"
+            :img-src="item.imgSrc"
+            :title="item.title"
+            :rating="item.rating"
+          />
+        </v-col>
+      </v-row>
+
+      <v-row style="margin-top: 5.625rem">
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex align-center justify-space-between"
+        >
+          <h1
+            class="mb-4"
+            style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
+          >
+            New releases for you
+          </h1>
+          <nuxt-link
+            to="#"
+            class="text-uppercase mb-0 text-decoration-none"
+            style=" font-weight: normal; font-size: 1rem; letter-spacing: 0.01em; line-height: 61px; color: #d5d5d5;"
+          >
+            view all
+          </nuxt-link>
+        </v-col>
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex justify-space-between"
+        >
+          <RecentCard
+            v-for="(item,i) in forYouData"
+            :key="i"
+            :is-rounded="item.isRounded"
+            :img-src="item.imgSrc"
+            :title="item.title"
+            :heading-sub-tex="item.headingSubTex"
+          />
+        </v-col>
+      </v-row>
+
+      <v-row style="margin-top: 5.625rem">
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex align-center justify-space-between"
+        >
+          <h1
+            class="mb-4"
+            style="font-size: 1.5rem; color: #fff; line-height: 52px; font-weight: 700"
+          >
+            You might like these artists
+          </h1>
+          <div>
+            <v-icon color="#303033">
+              $leftArrow
+            </v-icon>
+            <v-icon color="white">
+              $rightArrow
+            </v-icon>
+          </div>
+        </v-col>
+        <v-col
+          cols="12"
+          class="px-0 py-0 d-flex justify-space-between"
+        >
+          <RecentCard
+            v-for="(item,i) in youMightLikeData"
+            :key="i"
+            :is-rounded="item.isRounded"
+            :img-src="item.imgSrc"
+            :title="item.title"
+            :rating="item.rating"
           />
         </v-col>
       </v-row>
@@ -235,7 +356,7 @@ export default class Home extends Vue {
        rating: '948,117'
      },
      {
-       isRounded: false,
+       isRounded: true,
        imgSrc: require('@/assets/images/playListRadio.png'),
        title: '70s Rock Anthems Radio  ',
        rating: 'Progressive Rock'
@@ -337,5 +458,140 @@ export default class Home extends Vue {
     { centerText: true, title: 'busniess & technology', imgLink: '', bgColor: 'linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%)' },
     { centerText: true, title: 'games', imgLink: '', bgColor: 'linear-gradient(71deg, rgba(168,116,208,0.7903536414565826) 15%, rgba(116,121,209,0.7931547619047619) 100%)' }
   ]
+
+   playListsPickData: Array<{
+     isRounded: boolean,
+     imgSrc: string,
+     title: string,
+     rating?: string | number,
+     headingSubTex?: string
+   }> = [
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/composers.png'),
+       title: 'russian composers',
+       rating: '71,622'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/guitarSolo.png'),
+       title: 'Guitar Solos',
+       rating: '299,154'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/workoutrock.png'),
+       title: 'workout rock',
+       rating: '414,228'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/rockBallads.png'),
+       title: 'Rock ballads',
+       rating: '160,896'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/80sAlternativRock.png'),
+       title: '80s Alternative',
+       rating: '498,112'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/rockAbilly.png'),
+       title: 'Rockabilly',
+       rating: '82,127'
+     }
+   ]
+
+    forYouData: Array<{
+     isRounded: boolean,
+     imgSrc: string,
+     title: string,
+     rating?: string | number,
+     headingSubTex: string
+   }> = [
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/lp5.png'),
+       title: 'LP5',
+       headingSubTex: 'Apparat'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/numbNumb.png'),
+       title: 'Numb Numb Juice',
+       headingSubTex: 'Schoolboy Q'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/dripDown.png'),
+       title: 'Drip or Down 2',
+       headingSubTex: 'Gunna'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/shadows.png'),
+       title: 'Shadows',
+       headingSubTex: 'Remy Van Kesteren'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/brainFood.png'),
+       title: 'Don\'t Feed the Pop Monster',
+       headingSubTex: 'broods'
+     },
+     {
+       isRounded: false,
+       imgSrc: require('@/assets/images/hef.png'),
+       title: 'Hef',
+       headingSubTex: 'Koud'
+     }
+   ]
+
+   youMightLikeData: Array<{
+     isRounded: boolean,
+     imgSrc: string,
+     title: string,
+     rating?: string | number,
+     headingSubTex?: string
+   }> = [
+     {
+       isRounded: true,
+       imgSrc: require('@/assets/images/lp5.png'),
+       title: 'The Smiths',
+       rating: '371,228'
+     },
+     {
+       isRounded: true,
+       imgSrc: require('@/assets/images/numbNumb.png'),
+       title: 'The Clash',
+       rating: '367,784'
+     },
+     {
+       isRounded: true,
+       imgSrc: require('@/assets/images/dripDown.png'),
+       title: 'David Bowie',
+       rating: '490,415'
+     },
+     {
+       isRounded: true,
+       imgSrc: require('@/assets/images/shadows.png'),
+       title: 'Kurt Cobain',
+       rating: '699,228'
+     },
+     {
+       isRounded: true,
+       imgSrc: require('@/assets/images/brainFood.png'),
+       title: 'Lou Reed',
+       rating: '429,222'
+     },
+     {
+       isRounded: true,
+       imgSrc: require('@/assets/images/hef.png'),
+       title: 'The Velvet Underground',
+       rating: '147,123'
+     }
+   ]
 };
 </script>

@@ -31,11 +31,13 @@
       style="font-weight: normal; font-size: 0.875rem; letter-spacing: 0.01em;  color: #99999f; margin-top: -2px"
     >
       <v-icon
+        v-if="rating"
         color="#99999F"
         size="14"
       >
         $heart
-      </v-icon> {{ rating }}
+      </v-icon>
+      {{ headingSubTex ? headingSubTex : rating }}
     </p>
   </v-card>
 </template>
@@ -56,5 +58,8 @@ export default class RecentCard extends Vue {
 
     @Prop()
     isRounded!: boolean
+
+    @Prop()
+    headingSubTex!: string
 }
 </script>
