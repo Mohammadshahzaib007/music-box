@@ -27,11 +27,11 @@
             v-for="navLink in navLinks"
             :key="navLink"
             text
-            to="#"
+            :to="navLink.link"
             class=""
             style="font-size: 1.25rem; color: #99999F; line-height: 52px; font-weight: 700; margin-right: 1.875rem; text-decoration: none"
           >
-            {{ navLink }}
+            {{ navLink.name }}
           </nuxt-link>
         </v-col>
         <v-col
@@ -81,7 +81,11 @@ import { Component, Vue } from 'nuxt-property-decorator';
 
 @Component
 export default class Index extends Vue {
-  navLinks: Array<String> = ['Browse', 'Library', 'Home']
+  navLinks: Array<{name: string, link: string}> = [
+    { name: 'Browse', link: '/gener&mood' },
+    { name: 'Library', link: '#' },
+    { name: 'Home', link: '/' }
+  ]
 };
 </script>
 
