@@ -24,7 +24,7 @@
           <RecentCard
             v-for="(item,i) in forYouData"
             :key="i"
-            class="mt-10"
+            class="mb-10"
             :is-rounded="item.isRounded"
             :img-src="item.imgSrc"
             :title="item.title"
