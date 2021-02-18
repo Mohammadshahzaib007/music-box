@@ -39,7 +39,7 @@
         <div class="d-flex mt-7">
           <nuxt-link
             to="#"
-            class="text-uppercase mr-10 mb-2"
+            class="text-uppercase mr-10 mb-2 player-header-link"
             style="font-weight: bold; font-size: 1rem; letter-spacing: 0.01em; text-decoration: none;  color: #fff;"
           >
             episodes
@@ -116,3 +116,19 @@ export default class Playerheader extends Vue {
 
 };
 </script>
+
+<style lang="scss" scoped>
+.player-header-link {
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 2.375rem;
+    height: 3px;
+    position: absolute;
+    bottom: -7px;
+    left: 30%;
+    background: linear-gradient(#9b2def 0%, #2dceef 100%);
+  }
+}
+</style>
