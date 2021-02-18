@@ -41,7 +41,7 @@
           class="px-0 py-0"
         >
           <div
-            v-if="currentPage ==='/gener&mood'"
+            v-if="currentPage ==='/gener&mood' || currentPage === '/podcasts'"
             style="width: 100%; height: 100%"
             class="d-flex align-center justify-center"
           >
@@ -112,9 +112,9 @@ export default class Index extends Vue {
   ]
 
   categoryLinks: Array<{name: string, link: string}> = [
-    { name: 'Genres & Moods', link: '#' },
+    { name: 'Genres & Moods', link: '/gener&mood' },
     { name: 'New Releases', link: '#' },
-    { name: 'Podcasts', link: '#' }
+    { name: 'Podcasts', link: '/podcasts' }
   ]
 
   currentPage: string | null = null;

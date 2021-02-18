@@ -1,5 +1,6 @@
 <template>
   <section style="margin-top: 3.4375rem">
+    <nuxt-child />
     <v-container
       style="max-width: 92.5rem;"
       class="px-0 py-0"
