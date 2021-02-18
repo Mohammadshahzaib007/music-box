@@ -1,14 +1,42 @@
+
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="desserts"
-    class="elevation-0"
-    :footer-props="{
-      showFirstLastPage: false,
-    }"
-    disable-pagination
-    :hide-default-footer="true"
-  />
+  <div>
+    <v-data-table
+      :headers="headers"
+      :items="itemsList"
+      class="elevation-0"
+      :footer-props="{
+        showFirstLastPage: false,
+      }"
+      disable-pagination
+      :hide-default-footer="true"
+    >
+      <template #item.title="{ item }">
+        <PreviewTableItemCard class="mb-8" />
+      </template>
+
+      <template #item.progress="{item}">
+        <div
+
+          style="width: 120px; height: 3px; background: #99999F; border-raius: 2px"
+        >
+          <div style="width: 80px; height: 3px; background: #2dceef; border-raius: 2px" />
+        </div>
+      </template>
+
+      <template #item.uploadTime="{item}">
+        <span
+          style="font-weight: normal; font-size: 0.9375rem; letter-spacing: 0.01em; line-height: 32px; color: #99999f;"
+        >22/03/19</span>
+      </template>
+
+      <template #item.time="{item}">
+        <span
+          style="font-weight: normal; font-size: 0.9375rem; letter-spacing: 0.01em; line-height: 32px; color: #99999f;"
+        >49:45</span>
+      </template>
+    </v-data-table>
+  </div>
 </template>
 
 <script lang="ts">
@@ -18,16 +46,29 @@ import { Component, Vue } from 'nuxt-property-decorator';
 export default class MusicPlayListTable extends Vue {
 headers= [
   {
-    text: 'TITTLE',
+    text: 'title',
     align: 'start',
     sortable: false,
-    value: 'name'
+    value: 'title',
+    class: 'thTitle margin'
   },
-  { text: 'PROGRESS', value: 'calories' },
-  { text: 'UPLOAD TIME', value: 'fat' },
-  { text: 'TIME', value: 'carbs' }]
+  {
+    text: 'progress',
+    value: 'progress',
+    class: 'thTitle'
+  },
+  {
+    text: 'upload time',
+    value: 'uploadTime',
+    class: 'thTitle'
+  },
+  {
+    text: 'time',
+    value: 'time',
+    class: 'thTitle'
+  }]
 
-        desserts = [
+        itemsList = [
           {
             name: 'Frozen Yogurt',
             calories: 159,
@@ -117,4 +158,5 @@ headers= [
     background-color: transparent;
     color: #fff;
 }
+
 </style>

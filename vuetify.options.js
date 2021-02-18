@@ -18,6 +18,7 @@ import Pause from '@/components/icons/Pause.vue';
 import Prev from '@/components/icons/Prev.vue';
 import Next from '@/components/icons/Next.vue';
 import Repeat from '@/components/icons/Repeat.vue';
+import Podcast from '@/components/icons/Podcast.vue';
 
 export default {
   theme: {
@@ -88,6 +89,9 @@ export default {
       },
       repeat: {
         component: Repeat
+      },
+      podcast: {
+        component: Podcast
       }
     }
   }
