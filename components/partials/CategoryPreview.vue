@@ -1,5 +1,8 @@
 <template>
-  <PlayerHeader class="mt-15" />
+  <div>
+    <PlayerHeader class="mt-15" />
+    <MusicPlayListTable />
+  </div>
 </template>
 
 <script lang="ts">
