@@ -53,11 +53,17 @@ interface CardData {
 
 @Component
 export default class MusicPlayListTable extends Vue {
-headers= [
+headers: Array<{
+   text: string,
+    align?: string,
+    sortable?: boolean,
+    value: string,
+    class: string
+}>= [
   {
     text: 'title',
-    align: 'start',
-    sortable: false,
+    // align: 'start',
+    // sortable: false,
     value: 'title',
     class: 'thTitle margin'
   },
