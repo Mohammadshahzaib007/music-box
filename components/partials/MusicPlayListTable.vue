@@ -139,6 +139,7 @@ headers: Array<{
 .theme--light.v-data-table {
     background-color: transparent;
     color: #fff;
+    padding-bottom: 3.125rem;
 }
 
 </style>
