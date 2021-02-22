@@ -66,7 +66,7 @@
         </v-col>
         <v-col
           cols="12"
-          class="px-0 py-0 d-flex justify-space-between"
+          class="px-0 py-0 d-flex justify-space-between flex-wrap"
         >
           <RecentCard
             v-for="(item,i) in recentlyPlayedData"
@@ -313,6 +313,16 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
+import Index from '../Navigation.vue';
+
+interface RecentlyPlayedData {
+ [index: number] : {
+   isRounded: boolean,
+     imgSrc: string,
+     title: string,
+     rating: string | number
+     }
+}
 
 @Component
 export default class Home extends Vue {
@@ -351,12 +361,7 @@ export default class Home extends Vue {
     }
   ]
 
-   recentlyPlayedData: Array<{
-     isRounded: boolean,
-     imgSrc: string,
-     title: string,
-     rating: string | number
-   }> = [
+   recentlyPlayedData: RecentlyPlayedData = [
      {
        isRounded: true,
        imgSrc: require('@/assets/images/queen.png'),
@@ -364,7 +369,7 @@ export default class Home extends Vue {
        rating: '948,117'
      },
      {
-       isRounded: true,
+       isRounded: false,
        imgSrc: require('@/assets/images/playListRadio.png'),
        title: '70s Rock Anthems Radio  ',
        rating: 'Progressive Rock'
@@ -601,5 +606,30 @@ export default class Home extends Vue {
        rating: '147,123'
      }
    ]
+
+  apiKey = 'e7e8f907110d692e5113920ca4d34018'
+
+  baseUrl = 'https://ws.audioscrobbler.com/2.0/'
+
+  //  fetching recent played items
+  getRecentPlayedItem () {
+    fetch(`${this.baseUrl}/?method=chart.gettoptracks&api_key=${this.apiKey}&format=json`)
+      .then(response => response.json())
+      .then((data) => {
+        const { tracks: { track } } = data;
+        const neededTraks: RecentlyPlayedData = [];
+
+        track.map((item) => {
+          neededTraks.push({ isRounded: false, imgSrc: item.image[1].text, title: item.name, rating: item.playcount });
+          console.log(item.image[2].size);
+        });
+
+        this.recentlyPlayedData = neededTraks;
+      });
+  }
+
+  mounted () {
+    this.getRecentPlayedItem();
+  }
 };
 </script>
