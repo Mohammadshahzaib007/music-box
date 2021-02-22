@@ -29,11 +29,12 @@
         </v-col>
         <v-col
           cols="12"
-          class="px-0 py-0 d-flex justify-space-between"
+          class="px-0 py-0 d-flex justify-space-between flex-wrap"
         >
           <FlowCard
             v-for="(item, i) in flowSectionData"
             :key="i"
+            class="mb-5"
             :bg-image-src="item.bgImage"
             :cover-img-src="item.coverImgSrc"
             :sub-heading="item.subHeading"
@@ -71,6 +72,7 @@
           <RecentCard
             v-for="(item,i) in recentlyPlayedData"
             :key="i"
+            class="mb-5"
             :is-rounded="item.isRounded"
             :img-src="item.imgSrc"
             :title="item.title"
@@ -106,11 +108,12 @@
         </v-col>
         <v-col
           cols="12"
-          class="px-0 py-0 d-flex justify-space-between"
+          class="px-0 py-0 d-flex justify-space-between flex-wrap"
         >
           <CategoryCard
             v-for="(item, i) in categoryData"
             :key="i"
+            class="mb-5"
             :title="item.title"
             :bg-color="item.bgColor"
           />
@@ -138,11 +141,12 @@
         </v-col>
         <v-col
           cols="12"
-          class="px-0 py-0 d-flex justify-space-between"
+          class="px-0 py-0 d-flex justify-space-between flex-wrap"
         >
           <RecentCard
             v-for="(item,i) in makeMondayData"
             :key="i"
+            class="mb-5"
             :is-rounded="item.isRounded"
             :img-src="item.imgSrc"
             :title="item.title"
@@ -178,11 +182,12 @@
         </v-col>
         <v-col
           cols="12"
-          class="px-0 py-0 d-flex justify-space-between"
+          class="px-0 py-0 d-flex justify-space-between flex-wrap"
         >
           <CategoryCard
             v-for="(item, i) in podcastsCategoryData"
             :key="i"
+            class="mb-5"
             :title="item.title"
             :center-text="item.centerText"
             :bg-color="item.bgColor"
@@ -218,11 +223,12 @@
         </v-col>
         <v-col
           cols="12"
-          class="px-0 py-0 d-flex justify-space-between"
+          class="px-0 py-0 d-flex justify-space-between flex-wrap"
         >
           <RecentCard
             v-for="(item,i) in playListsPickData"
             :key="i"
+            class="mb-5"
             :is-rounded="item.isRounded"
             :img-src="item.imgSrc"
             :title="item.title"
@@ -252,11 +258,12 @@
         </v-col>
         <v-col
           cols="12"
-          class="px-0 py-0 d-flex justify-space-between"
+          class="px-0 py-0 d-flex justify-space-between flex-wrap"
         >
           <RecentCard
             v-for="(item,i) in forYouData"
             :key="i"
+            class="mb-5"
             :is-rounded="item.isRounded"
             :img-src="item.imgSrc"
             :title="item.title"
@@ -287,11 +294,12 @@
         </v-col>
         <v-col
           cols="12"
-          class="px-0 py-0 d-flex justify-space-between"
+          class="px-0 py-0 d-flex justify-space-between flex-wrap"
         >
           <RecentCard
             v-for="(item,i) in youMightLikeData"
             :key="i"
+            class="mb-5"
             :is-rounded="item.isRounded"
             :img-src="item.imgSrc"
             :title="item.title"
@@ -313,7 +321,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import Index from '../Navigation.vue';
 
 interface RecentlyPlayedData {
  [index: number] : {
@@ -620,8 +627,8 @@ export default class Home extends Vue {
         const neededTraks: RecentlyPlayedData = [];
 
         track.map((item) => {
-          neededTraks.push({ isRounded: false, imgSrc: item.image[1].text, title: item.name, rating: item.playcount });
-          console.log(item.image[2].size);
+          neededTraks.push({ isRounded: false, imgSrc: item.image[1]['#text'], title: item.name, rating: item.playcount });
+          console.log(item);
         });
 
         this.recentlyPlayedData = neededTraks;

@@ -1,5 +1,6 @@
 <template>
   <v-card
+    v-tilt
     width="14.0625rem"
     height="17.1875rem"
     color="transparent"
